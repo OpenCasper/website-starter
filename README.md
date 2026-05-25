@@ -42,6 +42,7 @@ Not active until separately approved:
 - next-sitemap
 - @next/bundle-analyzer
 - Cloudinary server SDK
+- Resend email SDK
 - Playwright
 - ESLint
 
@@ -97,11 +98,25 @@ Cloudinary status route:
 
 This route verifies server-side Cloudinary configuration without exposing secrets.
 
+Resend is wired for server-side email use through:
+
+```text
+RESEND_API_KEY
+```
+
+Resend status route:
+
+```text
+/api/resend/status
+```
+
+This route verifies server-side Resend configuration without exposing the API key.
+
 ## Approval Gates
 
 Stop and ask Casper before:
 
-- Connecting any new API/account beyond the approved GitHub, Vercel, and Cloudinary setup
+- Connecting any new API/account beyond the approved GitHub, Vercel, Cloudinary, and Resend setup
 - Adding new secrets or real environment values
 - Deploying to staging or production
 - Linking Vercel/Netlify/GitHub automation
