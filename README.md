@@ -43,6 +43,7 @@ Not active until separately approved:
 - @next/bundle-analyzer
 - Cloudinary server SDK
 - Resend email SDK
+- Sanity CMS client
 - Playwright
 - ESLint
 
@@ -112,11 +113,29 @@ Resend status route:
 
 This route verifies server-side Resend configuration without exposing the API key.
 
+Sanity is wired for CMS read/write readiness through:
+
+```text
+NEXT_PUBLIC_SANITY_PROJECT_ID
+NEXT_PUBLIC_SANITY_DATASET
+NEXT_PUBLIC_SANITY_API_VERSION
+SANITY_API_READ_TOKEN
+SANITY_API_WRITE_TOKEN
+```
+
+Sanity status route:
+
+```text
+/api/sanity/status
+```
+
+This route verifies server-side Sanity read/write token configuration without exposing tokens.
+
 ## Approval Gates
 
 Stop and ask Casper before:
 
-- Connecting any new API/account beyond the approved GitHub, Vercel, Cloudinary, and Resend setup
+- Connecting any new API/account beyond the approved GitHub, Vercel, Cloudinary, Resend, and Sanity setup
 - Adding new secrets or real environment values
 - Deploying to staging or production
 - Linking Vercel/Netlify/GitHub automation
