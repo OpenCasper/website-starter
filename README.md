@@ -41,6 +41,7 @@ Not active until separately approved:
 - Zod
 - next-sitemap
 - @next/bundle-analyzer
+- Cloudinary server SDK
 - Playwright
 - ESLint
 
@@ -78,14 +79,30 @@ Start from:
 cp .env.example .env.local
 ```
 
-Current placeholders are intentionally non-production. Replace only after project approval.
+Cloudinary is wired for full server-side use through:
+
+```text
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET
+```
+
+`NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` is public. `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` are private and must stay in Vercel/local environment variables only.
+
+Cloudinary status route:
+
+```text
+/api/cloudinary/status
+```
+
+This route verifies server-side Cloudinary configuration without exposing secrets.
 
 ## Approval Gates
 
 Stop and ask Casper before:
 
-- Connecting any API/account
-- Adding secrets or real environment values
+- Connecting any new API/account beyond the approved GitHub, Vercel, and Cloudinary setup
+- Adding new secrets or real environment values
 - Deploying to staging or production
 - Linking Vercel/Netlify/GitHub automation
 - Changing DNS or domains
