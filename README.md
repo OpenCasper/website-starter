@@ -44,6 +44,7 @@ Not active until separately approved:
 - Cloudinary server SDK
 - Resend email SDK
 - Sanity CMS client
+- Google Analytics / Google tag support
 - Playwright
 - ESLint
 
@@ -134,11 +135,19 @@ Sanity status route:
 
 This route verifies server-side Sanity read/write token configuration without exposing tokens.
 
+Google Analytics is wired through:
+
+```text
+NEXT_PUBLIC_GA_MEASUREMENT_ID
+```
+
+This is a public measurement ID used for GA4/Google Ads readiness. Remove or unset this variable to disable GA loading.
+
 ## Approval Gates
 
 Stop and ask Casper before:
 
-- Connecting any new API/account beyond the approved GitHub, Vercel, Cloudinary, Resend, and Sanity setup
+- Connecting any new API/account beyond the approved GitHub, Vercel, Cloudinary, Resend, Sanity, and Google Analytics setup
 - Adding new secrets or real environment values
 - Deploying to staging or production
 - Linking Vercel/Netlify/GitHub automation
