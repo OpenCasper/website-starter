@@ -14,9 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Website Starter | Premium Next.js Foundation",
+  title: "Vivid Extensions Consultation Request | Vivid Salon",
   description:
-    "A production-minded starter foundation for premium websites built with Next.js, React, Tailwind, motion, QA, and approval-gated integrations.",
+    "Consultation-request-first Vivid Extensions planning built around premium hair quality, colour blending, method selection, styling versatility, and long-term maintenance.",
+  keywords: [
+    "Vivid Extensions",
+    "hair extensions Mississauga",
+    "natural looking hair extensions Mississauga",
+    "hair extension consultation Mississauga",
+    "tape in extensions Mississauga",
+    "weft extensions Mississauga",
+    "fusion extensions Mississauga",
+    "Vivid Salon hair extensions",
+  ],
+  openGraph: {
+    title: "Vivid Extensions Consultation Request | Vivid Salon",
+    description:
+      "Apply for a personally reviewed Vivid Extensions consultation request built around premium hair quality, seamless blending, and a custom recommendation.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
